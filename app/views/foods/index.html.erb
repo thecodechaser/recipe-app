@@ -1,6 +1,8 @@
 <div>  
   <div class="d-flex justify-content-end m-3">
-    <button> Add Food </button>
+    <button class='btn btn-outline-info'>
+      <%= link_to 'Add new food', new_food_path, class: "nav-link" %>
+    </button> 
   </div>
   <table class="table m-3">
     <thead>
@@ -12,12 +14,14 @@
         </tr>
     </thead>
     <tbody>
+      <% @foods.each do |food| %>
         <tr>
-        <th scope="row">Apple</th>
-        <td>Grams</td>
-        <td> $5 </td>
+        <th scope="row"> <%= food.name %> </th>
+        <td> <%= food.measurement_unit %> </td>
+        <td> <%= food.price %> </td>
         <td> Delete </td>
         </tr>
+      <% end %>
     </tbody>
   </table>
 </div>
