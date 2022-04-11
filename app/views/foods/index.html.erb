@@ -18,8 +18,12 @@
         <tr>
         <th scope="row"> <%= food.name %> </th>
         <td> <%= food.measurement_unit %> </td>
-        <td> <%= food.price %> </td>
-        <td> Delete </td>
+        <td>$<%= food.price %> </td>
+        <td> 
+          <% if can? :destroy, food %> 
+            <%= button_to "Delete", food_path(food.id ), :method => :delete, class: "del" %> 
+          <% end %>
+        </td>
         </tr>
       <% end %>
     </tbody>
