@@ -1,21 +1,21 @@
-<div>
-<h3>All Recipes</h3>
-<div class="d-flex justify-content-end m-3">
+<div class="m-3">
+  <h3>All Recipes</h3>
+  <div class="d-flex justify-content-end m-3">
     <button class='btn btn-outline-info'>
       <%= link_to 'Add new recipe', new_recipe_path, class: "nav-link" %>
     </button> 
   </div>
 
-<%= @recipes.each do |recipe| %>
-  <div class="row">
-  <div class="col-3">
-  <h3><%= recipe.name %></h3>
-  <button>Remove</button>
-  </div>
-  <div class="col-offset-1 col-8">
-  <p><%= recipe.description[1..50] %></p>
-  </div>
-  <div>
+  <div class="row m-3">
+    <% @recipes.each do |recipe| %>
+      <div class="col-3 border p-3">
+        <h3><%= recipe.name %></h3>
+        <button class="m-3">Remove</button>
+      </div>
+      <div class="col-offset-1 col-8 border p-3">
+        <p><%= recipe.description %></p>
+      </div>
   <% end %>
+  <div>
 
 </div>
