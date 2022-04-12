@@ -14,7 +14,7 @@
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>
-    <div id="user_nav"> 
+    <div id="user_nav" class="mt-5"> 
       <% if user_signed_in? %> 
         Signed in as <%= current_user.email %>. This cannot be cheese? <%= link_to "Sign out", destroy_user_session_path, :method => :delete %> 
       <% else %> 
