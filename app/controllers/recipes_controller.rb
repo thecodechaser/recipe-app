@@ -4,6 +4,10 @@ def index
   @recipes = Recipe.all
 end
 
+def show
+
+end
+
 def create
   @new_recipe = current_user.recipes.new(recipe_params)
   if @new_recipe.save!
