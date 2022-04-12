@@ -2,11 +2,22 @@
 <div class="m-5">
   <h2 class="text-center"><%= @recipe.name %></h2>
  
-  <div class="d-flex justify-content-between">
-    <p>Prepration time: <%= @recipe.prepration_time %></p>
-    <p class="">public</p>
+  <div class="d-flex">
+    <p class="flex-grow-1">Prepration time: <%= @recipe.prepration_time %></p>
+    <p>public</p>
+
+    <%= button_to recipe_path(@recipe.id), :method => :patch, class: "align-self-end" do %>
+      <% if @recipe.public %>
+        <i class="fa fa-toggle-on" style="font-size:48px;color:green"></i>
+      <% end %>
+      <% if !@recipe.public %>
+        <i class="fa fa-toggle-off" style="font-size:48px;color:green"></i>
+      <% end %>
+    <% end %>
+
   </div>
-   <div>
+
+  <div>
      <p>Cooking time: <%= @recipe.cooking_time %></p>
    </div>
    <div>

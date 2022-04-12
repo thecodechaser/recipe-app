@@ -106,6 +106,8 @@ GEM
     erubi (1.10.0)
     ffi (1.15.5)
     ffi (1.15.5-x64-mingw-ucrt)
+    font-awesome-rails (4.7.0.8)
+      railties (>= 3.2, < 8.0)
     globalid (1.0.0)
       activesupport (>= 5.0)
     i18n (1.10.0)
@@ -284,6 +286,7 @@ DEPENDENCIES
   debug
   devise
   ffi
+  font-awesome-rails
   importmap-rails
   jbuilder
   pg (~> 1.1)
