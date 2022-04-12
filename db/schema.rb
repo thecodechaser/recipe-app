@@ -30,7 +30,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_12_074110) do
     t.string "prepration_time"
     t.string "cooking_time"
     t.text "description"
-    t.boolean "public"
+    t.boolean "public", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_recipes_on_user_id"
