@@ -13,6 +13,13 @@ def create
   end
 end
 
+def destroy
+  @recipe = Recipe.find(params[:id])
+  @recipe.destroy!
+  flash[:notice] = 'You have deleted the food!'
+    redirect_to recipes_path
+end
+
 private
 
 def recipe_params

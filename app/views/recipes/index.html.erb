@@ -10,7 +10,11 @@
     <% @recipes.each do |recipe| %>
       <div class="col-3 border p-3">
         <h3><%= recipe.name %></h3>
-        <button class="m-3">Remove</button>
+        
+        <% if can? :destroy, recipe %>
+        <%= button_to "Remove", recipe_path(recipe.id ), :method => :delete, class: "del" %> 
+        <% end %>
+
       </div>
       <div class="col-offset-1 col-8 border p-3">
         <p><%= recipe.description %></p>
