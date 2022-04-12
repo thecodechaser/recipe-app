@@ -58,7 +58,7 @@ gem 'cancancan', '~> 3.3'
 
 # font-awesome
 
-gem "font-awesome-rails"
+gem 'font-awesome-rails'
 
 # Use Sass to process CSS
 # gem "sassc-rails"
