@@ -1,4 +1,4 @@
-class RecipeFoodController < ApplicationController
+class RecipesFoodsController < ApplicationController
 
   def new
 
