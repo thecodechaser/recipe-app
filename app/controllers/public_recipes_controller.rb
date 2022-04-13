@@ -9,7 +9,6 @@ class PublicRecipesController < ApplicationController
         user: public_recipe.name,
         description: public_recipe.description,
         food_items: public_recipe.recipe_foods.count,
-        total_price: public_recipe.foods.map(&:price).sum,
         recipe_foods: public_recipe.recipe_foods
       }
     end
@@ -23,7 +22,7 @@ class PublicRecipesController < ApplicationController
         public_recipe[:recipe_foods].each do |recipe_food|
 
         total_price += recipe_food.food.price*recipe_food.quantity
-        
+
         end
         @total_price.push(total_price)
       end
