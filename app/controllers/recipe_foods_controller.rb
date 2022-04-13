@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class RecipeFoodsController < ApplicationController
   def new
     @recipe_food = RecipeFood.new
