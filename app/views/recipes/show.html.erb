@@ -1,1 +1,59 @@
-<p>Its working</p>
+
+<div class="m-5">
+  <h2 class="text-center"><%= @recipe.name %></h2>
+ 
+  <div class="d-flex">
+    <p class="flex-grow-1">Prepration time: <%= @recipe.prepration_time %></p>
+    <p>public</p>
+
+    <%= button_to recipe_path(@recipe.id), :method => :patch, class: "align-self-end" do %>
+      <% if @recipe.public %>
+        <i class="fa fa-toggle-on" style="font-size:48px;color:green"></i>
+      <% end %>
+      <% if !@recipe.public %>
+        <i class="fa fa-toggle-off" style="font-size:48px;color:green"></i>
+      <% end %>
+    <% end %>
+
+  </div>
+
+  <div>
+     <p>Cooking time: <%= @recipe.cooking_time %></p>
+   </div>
+   <div>
+     <p>Steps goes here...</p>
+   </div>
+
+   <div>
+   <button class='btn btn-outline-info'>
+   <%= link_to 'Add incredient', new_recipe_recipe_food_path(@recipe.id), class: "nav-link" %>
+ </button> 
+   </div>
+
+   <table class="table m-3">
+    <thead>
+      <tr>
+        <th scope="col">Food</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Value</th>
+        <th scope="col">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+    <% @recipe.recipe_foods.each do |recipe_food| %>
+      <tr>
+        <th scope="row"><%= recipe_food.food.name %> </th>
+        <td><%= recipe_food.quantity %><%= recipe_food.food.measurement_unit %> </td>
+        <td>  $<%= recipe_food.food.price*recipe_food.quantity %></td>
+        <td> 
+        <% if can? :destroy, @recipe %>
+        <%= link_to "Modify", edit_recipe_recipe_food_path(@recipe.id, recipe_food.id), class: "del" %> 
+          <%= button_to "Remove", recipe_recipe_food_path(@recipe.id, recipe_food.id), :method => :delete, class: "del" %> 
+          <% end %>
+        </td>
+      </tr>
+      <%end %>
+   </tbody>
+  </table>
+
+</div>
