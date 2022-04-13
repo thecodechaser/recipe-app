@@ -21,7 +21,22 @@ class RecipeFoodsController < ApplicationController
     redirect_to recipe_path(params[:recipe_id])
   end
 
+  def edit
+    @recipe_id = params[:recipe_id]
+  end
+
+  def update
+    @recipe_food = RecipeFood.find(params[:id])
+    @recipe_food.update(edit_recipe_food_params)
+    flash[:notice] = 'You have updated the recipe food successfully'
+    redirect_to recipe_path(params[:recipe_id])
+  end
+
   private
+
+  def edit_recipe_food_params
+    params.require(:edit_recipe_food).permit(:quantity, :food_id)
+  end
 
   def recipe_food_params
     params.require(:recipe_food).permit(:quantity, :food_id)

@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :foods, only: [:index, :new, :create, :destroy]
 
   resources :recipes, only: [:index, :show, :new, :create, :destroy, :update] do
-    resources :recipe_foods, only: [:new, :create, :destroy, :update]
+    resources :recipe_foods, only: [:new, :create, :destroy, :edit, :update]
   end
   
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
