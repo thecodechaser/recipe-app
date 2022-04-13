@@ -40,14 +40,16 @@
         </tr>
     </thead>
     <tbody>
-    <% @recipe.recipe_foods.each do |food| %>
+    <% @recipe.recipe_foods.each do |recipe_food| %>
       <tr>
-        <th scope="row"><%= food.food.name %> </th>
-        <td><%= food.id %><%= food.food.measurement_unit %> </td>
-        <td>  $<%= food.food.price*food.quantity %></td>
+        <th scope="row"><%= recipe_food.food.name %> </th>
+        <td><%= recipe_food.quantity %><%= recipe_food.food.measurement_unit %> </td>
+        <td>  $<%= recipe_food.food.price*recipe_food.quantity %></td>
         <td> 
+        <% if can? :destroy, @recipe %>
           <button>Modify</button>
-          <button>Remove</button>
+          <%= button_to "Remove", recipe_recipe_food_path(@recipe.id, recipe_food.id), :method => :delete, class: "del" %> 
+          <% end %>
         </td>
       </tr>
       <%end %>
