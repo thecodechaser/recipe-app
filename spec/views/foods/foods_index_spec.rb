@@ -22,6 +22,18 @@ RSpec.describe 'Foods#index', type: :feature do
     it 'shows the food name' do
       expect(page).to have_content('Food')
     end
+
+    it 'shows the food measurment unit' do
+      expect(page).to have_content('Measurement Unit')
+    end
+
+    it 'shows the food unit price' do
+      expect(page).to have_content('Unit Price')
+    end
+
+    it 'shows the food actions' do
+      expect(page).to have_content('Actions')
+    end
     
   end
 end
