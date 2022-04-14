@@ -1,22 +1,8 @@
-example_id                               | status | run_time        |
----------------------------------------- | ------ | --------------- |
-./spec/models/food_spec.rb[1:1:1]        | passed | 0.00157 seconds |
-./spec/models/food_spec.rb[1:1:2]        | passed | 0.00134 seconds |
-./spec/models/food_spec.rb[1:1:3]        | passed | 0.002 seconds   |
-./spec/models/food_spec.rb[1:1:4]        | passed | 0.00215 seconds |
-./spec/models/food_spec.rb[1:1:5]        | passed | 0.00227 seconds |
-./spec/models/food_spec.rb[1:1:6]        | passed | 0.00182 seconds |
-./spec/models/food_spec.rb[1:1:7]        | passed | 0.00172 seconds |
-./spec/models/recipe_food_spec.rb[1:1:1] | passed | 0.02586 seconds |
-./spec/models/recipe_food_spec.rb[1:1:2] | passed | 0.00207 seconds |
-./spec/models/recipe_food_spec.rb[1:1:3] | passed | 0.00184 seconds |
-./spec/models/recipe_spec.rb[1:1:1]      | passed | 0.00094 seconds |
-./spec/models/recipe_spec.rb[1:1:2]      | passed | 0.00304 seconds |
-./spec/models/recipe_spec.rb[1:1:3]      | passed | 0.0022 seconds  |
-./spec/models/recipe_spec.rb[1:1:4]      | passed | 0.00133 seconds |
-./spec/models/recipe_spec.rb[1:1:5]      | passed | 0.00105 seconds |
-./spec/models/recipe_spec.rb[1:1:6]      | passed | 0.00119 seconds |
-./spec/models/recipe_spec.rb[1:1:7]      | passed | 0.0013 seconds  |
-./spec/models/recipe_spec.rb[1:1:8]      | passed | 0.00251 seconds |
-./spec/models/user_spec.rb[1:1:1]        | passed | 0.01202 seconds |
-./spec/models/user_spec.rb[1:1:2]        | passed | 0.08164 seconds |
+example_id                        | status | run_time        |
+--------------------------------- | ------ | --------------- |
+./spec/views/login_spec.rb[1:1]   | passed | 0.00983 seconds |
+./spec/views/login_spec.rb[1:2]   | passed | 0.00971 seconds |
+./spec/views/login_spec.rb[1:3]   | passed | 0.22727 seconds |
+./spec/views/login_spec.rb[1:4:1] | passed | 0.04004 seconds |
+./spec/views/login_spec.rb[1:4:2] | passed | 0.02263 seconds |
+./spec/views/login_spec.rb[1:4:3] | passed | 0.07081 seconds |
