@@ -1,8 +1,5 @@
-example_id                        | status | run_time        |
---------------------------------- | ------ | --------------- |
-./spec/views/login_spec.rb[1:1]   | passed | 0.00983 seconds |
-./spec/views/login_spec.rb[1:2]   | passed | 0.00971 seconds |
-./spec/views/login_spec.rb[1:3]   | passed | 0.22727 seconds |
-./spec/views/login_spec.rb[1:4:1] | passed | 0.04004 seconds |
-./spec/views/login_spec.rb[1:4:2] | passed | 0.02263 seconds |
-./spec/views/login_spec.rb[1:4:3] | passed | 0.07081 seconds |
+example_id                                       | status | run_time        |
+------------------------------------------------ | ------ | --------------- |
+./spec/views/recipes/recipes_show_spec.rb[1:1:1] | passed | 0.32874 seconds |
+./spec/views/recipes/recipes_show_spec.rb[1:1:2] | passed | 0.05033 seconds |
+./spec/views/recipes/recipes_show_spec.rb[1:1:3] | passed | 0.04933 seconds |
