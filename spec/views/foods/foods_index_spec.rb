@@ -2,8 +2,8 @@
 
 require 'rails_helper'
 
-RSpec.describe 'recipes#index', type: :feature do
-  describe 'Recipe' do
+RSpec.describe 'Foods#index', type: :feature do
+  describe 'Food' do
     before(:each) do
       @user = User.create(name: 'Ranjeet',  email: 'amy@gmail.com', password: 'password')
       visit new_user_session_path
