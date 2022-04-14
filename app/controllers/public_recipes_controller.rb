@@ -13,20 +13,15 @@ class PublicRecipesController < ApplicationController
       }
     end
 
+    @total_price = []
 
-      @total_price = []
+    @public_recipes.each do |public_recipe|
+      total_price = 0
 
-      @public_recipes.each do |public_recipe|
-        total_price = 0
-
-        public_recipe[:recipe_foods].each do |recipe_food|
-
-        total_price += recipe_food.food.price*recipe_food.quantity
-
-        end
-        @total_price.push(total_price)
+      public_recipe[:recipe_foods].each do |recipe_food|
+        total_price += recipe_food.food.price * recipe_food.quantity
       end
-   
-
+      @total_price.push(total_price)
+    end
   end
 end
