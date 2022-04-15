@@ -2,6 +2,9 @@
 
 class RecipeFoodsController < ApplicationController
   def new
+    if !current_user
+      redirect_to recipe_path(params[:recipe_id]), flash: { alert: 'Please sign up or login!' }
+    end
     @recipe_food = RecipeFood.new
     @recipe_id = params[:recipe_id]
   end

@@ -16,6 +16,7 @@
 
  .notice-alert {
    margin-left: 30px;
+   margin-top: 15px;
    color: #2276f4;
    font-size: 18px;
    font-family: 'Anton', sans-serif;
@@ -126,7 +127,7 @@
   color: #fff;
 }
 
-/* recipes-page styles */
+/* recipes-page index styles */
 
 .recipes-c {
   margin-top: 70px;
@@ -173,6 +174,82 @@
 .each-recipe-link {
   text-decoration: none;
   color: #000;
+}
+
+/* recipes-page show styles */
+
+.recipe-show-c {
+  margin-top: 50px;
+}
+
+.recipe-show-h2 {
+  text-align: center;
+  color: #2276f4;
+}
+
+.recipe-show-d1 {
+  margin: 10px 50px;
+}
+
+.recipe-show-prep-t {
+  font-size: 20px;
+}
+
+.recipe-show-publcT {
+  font-size: 20px;
+}
+
+.public-btn {
+  border: none;
+  background-color: #fff;
+  margin: -10px 0px 0px 5px;
+}
+
+.show-cook-time,
+.show-steps {
+  font-size: 20px;
+  margin: 15px 45px;
+}
+
+.shopping-list-btn {
+  background-color: #2276f4;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  margin-left: 40px;
+}
+
+.shopping-list-btn-t {
+  color: #fff;
+  text-decoration: none;
+}
+
+.add-ingre-btn {
+  background-color: #2276f4;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  margin-right: 40px;
+}
+
+.add-ingre-btn-t {
+  color: #fff;
+  text-decoration: none;
+}
+
+.show-btns {
+  display: flex;
+  gap: 10px;
+}
+
+.show-modify-btn,
+.show-dlt-btn {
+  background-color: #2276f4;
+  border: none;
+  padding: 5px 8px;
+  border-radius: 5px;
+  color: #fff;
+  text-decoration: none;
 }
 
 /* public-recipes styles  */
