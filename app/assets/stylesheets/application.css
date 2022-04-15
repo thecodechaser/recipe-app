@@ -2,25 +2,25 @@
  *= require font-awesome
  */
 
- @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
- @import url('https://fonts.googleapis.com/css2?family=Nunito&family=Poppins&display=swap');
- @import url('https://fonts.googleapis.com/css2?family=Anton&family=Nunito&family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito&family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Nunito&family=Poppins&display=swap');
 
- /* application-layout styles*/
+/* application-layout styles */
 
- body {
-   background-color: #ffffff;
-   font-family: 'Poppins', sans-serif;
-   margin-top: -15px;
- }
+body {
+  background-color: #fff;
+  font-family: 'Poppins', sans-serif;
+  margin-top: -15px;
+}
 
- .notice-alert {
-   margin-left: 30px;
-   margin-top: 15px;
-   color: #2276f4;
-   font-size: 18px;
-   font-family: 'Anton', sans-serif;
-   }
+.notice-alert {
+  margin-left: 30px;
+  margin-top: 15px;
+  color: #2276f4;
+  font-size: 18px;
+  font-family: 'Anton', sans-serif;
+}
 
 .session-msg {
   display: flex;
@@ -42,7 +42,7 @@
   display: flex;
   justify-content: space-between;
   padding: 15px 50px;
-  box-shadow: 0 5px #EDEDED;
+  box-shadow: 0 5px #ededed;
   width: 100%;
   margin-top: 10px;
 }
@@ -168,7 +168,7 @@
   padding: 10px 20px;
   border-radius: 5px;
   color: white;
-  margin-top: 15px;;
+  margin-top: 15px;
 }
 
 /* recipes-page index styles */
@@ -218,10 +218,10 @@
 .each-recipe-link {
   text-decoration: none;
   color: #000;
-  box-shadow: 5px 5px #EDEDED;
+  box-shadow: 5px 5px #ededed;
   margin: 5px 150px;
   padding: 20px;
-  border: 2px solid #EDEDED;
+  border: 2px solid #ededed;
 }
 
 /* recipes-page show styles */
@@ -250,7 +250,7 @@
 .public-btn {
   border: none;
   background-color: #fff;
-  margin: -10px 0px 0px 5px;
+  margin: -10px 0 0 5px;
 }
 
 .show-cook-time,
@@ -322,7 +322,7 @@
 }
 
 .public-recipe-2c {
-  box-shadow: 5px 5px #EDEDED;
+  box-shadow: 5px 5px #ededed;
   margin: 50px 150px;
   padding: 20px 0 20px 300px;
   color: #000;

@@ -6,9 +6,7 @@ class FoodsController < ApplicationController
   end
 
   def new
-    if !current_user
-      redirect_to foods_path, flash: { alert: 'Please sign up or login!' }
-    end
+    redirect_to foods_path, flash: { alert: 'Please sign up or login!' } unless current_user
 
     @food = Food.new
   end
