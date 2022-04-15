@@ -1,5 +1,5 @@
-<h2>Sign up</h2>
-
+<div class="session-c">
+<h2 class="session-h2">Sign up</h2>
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
   
@@ -27,8 +27,9 @@
   </div>
 
   <div class="actions">
-    <%= f.submit "Sign up" %>
+    <%= f.submit "Sign up", class: "session-btn" %>
   </div>
 <% end %>
 
 <%= render "devise/shared/links" %>
+</div>
