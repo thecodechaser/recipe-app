@@ -285,3 +285,22 @@
 .public-recipe-2c:hover {
   color: #2276f4;
 }
+
+/* recipe-food-page styles */
+
+.recipe-food-new,
+.recipe-food-edit {
+  display: flex;
+  flex-direction: column;
+  margin: 50px 0 20px 600px;
+}
+
+.recipe-food-btns,
+.recipe-food-edit-btns {
+  display: flex;
+  gap: 50px;
+}
+
+.form-control2 {
+  padding: 10px 48px;
+}
