@@ -177,6 +177,10 @@ body {
   margin-top: 70px;
 }
 
+.recipes-desc {
+  margin-left: 40px;
+}
+
 .recipes-h3 {
   text-align: center;
   color: #2276f4;
@@ -364,5 +368,11 @@ body {
 }
 
 .recipe-food-new-h3 {
+  color: #2276f4;
+}
+
+/* shopping-list styles */
+
+.shop-heads {
   color: #2276f4;
 }
