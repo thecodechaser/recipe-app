@@ -1,39 +1,37 @@
 
-<div class="m-5">
-  <h2 class="text-center"><%= @recipe.name %></h2>
+<div class="recipe-show-c">
+  <h2 class="recipe-show-h2"><%= @recipe.name %></h2>
  
-  <div class="d-flex">
-    <p class="flex-grow-1">Prepration time: <%= @recipe.prepration_time %></p>
-    <p>public</p>
+  <div class="d-flex recipe-show-d1">
+    <p class="flex-grow-1 recipe-show-prep-t">Prepration time: <%= @recipe.prepration_time %></p>
+    <p class="recipe-show-publcT">Public</p>
 
-    <%= button_to recipe_path(@recipe.id), :method => :patch, class: "align-self-end" do %>
+    <% if current_user.id == @recipe.user.id %> 
+    <%= button_to recipe_path(@recipe.id), :method => :patch, class: "align-self-end public-btn" do %>
       <% if @recipe.public %>
         <i class="fa fa-toggle-on" style="font-size:48px;color:green"></i>
-      <% end %>
-      <% if !@recipe.public %>
+      <% else %>
         <i class="fa fa-toggle-off" style="font-size:48px;color:green"></i>
       <% end %>
     <% end %>
-
+    <% end %>
   </div>
 
-  <div>
-     <p>Cooking time: <%= @recipe.cooking_time %></p>
-   </div>
-   <div>
-     <p>Steps goes here...</p>
-   </div>
+     <p class="show-cook-time">Cooking time: <%= @recipe.cooking_time %></p>
+     <p class="show-steps">Steps goes here...</p>
 
    <div class="d-flex justify-content-between">
-   <button class='btn btn-outline-info'>
-   <%= link_to 'Generate shooping list', shopping_list_index_path, class: "nav-link" %>
+   <% if current_user.id == @recipe.user.id %> 
+   <button class='shopping-list-btn'>
+   <%= link_to 'Generate shooping list', shopping_list_index_path, class: "shopping-list-btn-t" %>
  </button> 
-   <button class='btn btn-outline-info'>
-   <%= link_to 'Add incredient', new_recipe_recipe_food_path(@recipe.id), class: "nav-link" %>
+   <button class='add-ingre-btn'>
+   <%= link_to 'Add incredient', new_recipe_recipe_food_path(@recipe.id), class: "add-ingre-btn-t" %>
  </button> 
+ <% end %>
    </div>
 
-   <table class="table m-3">
+   <table class="table m-5">
     <thead>
       <tr>
         <th scope="col">Food</th>
@@ -48,10 +46,10 @@
         <th scope="row"><%= recipe_food.food.name %> </th>
         <td><%= recipe_food.quantity %><%= recipe_food.food.measurement_unit %> </td>
         <td>  $<%= recipe_food.food.price*recipe_food.quantity %></td>
-        <td> 
+        <td class="show-btns"> 
         <% if can? :destroy, @recipe %>
-        <%= link_to "Modify", edit_recipe_recipe_food_path(@recipe.id, recipe_food.id), class: "del" %> 
-          <%= button_to "Remove", recipe_recipe_food_path(@recipe.id, recipe_food.id), :method => :delete, class: "del" %> 
+        <%= link_to "Modify", edit_recipe_recipe_food_path(@recipe.id, recipe_food.id), class: "show-modify-btn" %> 
+          <%= button_to "Remove", recipe_recipe_food_path(@recipe.id, recipe_food.id), :method => :delete, class: "show-dlt-btn" %> 
           <% end %>
         </td>
       </tr>

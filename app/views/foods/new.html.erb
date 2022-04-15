@@ -1,9 +1,21 @@
-<div>
-  <h3 class='m-3'> Add Food</h3>
+<div class="foods-new-c">
+  <h3 class="foods-new-h3"> Add Food</h3>
   <%= form_with url: foods_path, scope: :food do |form| %>
-    <%= form.text_field :name, placeholder: 'Please enter the food name', class: 'row m-3', require: true %>
-    <%= form.text_field :measurement_unit, placeholder: 'Please enter the measuring unit', class: 'row m-3', require: true %>
-    <%= form.number_field :price, placeholder: 'Please enter the price of the food', class: 'row m-3', require: true %>
-    <%= form.submit "Submit" %>
+    <div class="foods-new-div">
+    <%= form.label :Name, class:"form-label" %><br>
+    <%= form.text_field :name, class: 'form-control', require: true %>
+    </div>
+
+    <div class="foods-new-div">
+    <%= form.label :Measurement_Unit, class:"form-label" %><br>
+    <%= form.text_field :measurement_unit, class: 'form-control', require: true %>
+    </div>
+
+    <div class="foods-new-div">
+    <%= form.label :Price, class:"form-label" %><br>
+    <%= form.number_field :price, class: 'form-control', require: true %>
+    </div>
+
+    <%= form.submit "Submit", class: "foods-new-btn" %>
   <% end %>
 </div>

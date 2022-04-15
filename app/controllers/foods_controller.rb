@@ -6,6 +6,8 @@ class FoodsController < ApplicationController
   end
 
   def new
+    redirect_to foods_path, flash: { alert: 'Please sign up or login!' } unless current_user
+
     @food = Food.new
   end
 

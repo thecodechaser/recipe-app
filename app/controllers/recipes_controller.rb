@@ -10,6 +10,8 @@ class RecipesController < ApplicationController
   end
 
   def new
+    redirect_to recipes_path, flash: { alert: 'Please sign up or login!' } unless current_user
+
     @recipe = Recipe.new
   end
 
@@ -30,15 +32,20 @@ class RecipesController < ApplicationController
   end
 
   def update
-    @recipe = Recipe.find(params[:id])
-    if @recipe.public
-      @recipe.update(public: false)
-      flash[:notice] = 'You have updated the recipe status to private'
+    if current_user
+
+      @recipe = Recipe.find(params[:id])
+      if @recipe.public
+        @recipe.update(public: false)
+        flash[:notice] = 'You have updated the recipe status to private'
+      else
+        @recipe.update(public: true)
+        flash[:notice] = 'You have updated the recipe status to public'
+      end
+      redirect_to recipe_path
     else
-      @recipe.update(public: true)
-      flash[:notice] = 'You have updated the recipe status to public'
+      redirect_to recipe_path(params[:id]), flash: { alert: 'Please sign up or login!' }
     end
-    redirect_to recipe_path
   end
 
   private
