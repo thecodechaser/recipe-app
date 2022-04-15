@@ -198,7 +198,7 @@
   text-decoration: none;
   color: #000;
   box-shadow: 5px 5px #EDEDED;
-  margin: 20px 150px;
+  margin: 5px 150px;
   padding: 20px;
   border: 2px solid #EDEDED;
 }
@@ -340,4 +340,8 @@
 
 .form-control2 {
   padding: 10px 48px;
+}
+
+.recipe-food-new-h3 {
+  color: #2276f4;
 }
