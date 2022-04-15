@@ -24,7 +24,10 @@
      <p>Steps goes here...</p>
    </div>
 
-   <div>
+   <div class="d-flex justify-content-between">
+   <button class='btn btn-outline-info'>
+   <%= link_to 'Generate shooping list', shopping_list_index_path, class: "nav-link" %>
+ </button> 
    <button class='btn btn-outline-info'>
    <%= link_to 'Add incredient', new_recipe_recipe_food_path(@recipe.id), class: "nav-link" %>
  </button> 
