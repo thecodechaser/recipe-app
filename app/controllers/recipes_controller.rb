@@ -9,6 +9,10 @@ class RecipesController < ApplicationController
     @recipe = Recipe.find(params[:id])
   end
 
+  def new
+    @recipe = Recipe.new
+  end
+
   def create
     @new_recipe = current_user.recipes.new(recipe_params)
     if @new_recipe.save!
