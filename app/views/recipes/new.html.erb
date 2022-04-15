@@ -1,10 +1,26 @@
-<div>
-  <h3 class='m-3'> Add Recipe</h3>
+<div class="recipes-new-c">
+  <h3 class='recipes-new-h3'> Add Recipe</h3>
   <%= form_with url: recipes_path, scope: :recipe do |form| %>
-    <%= form.text_field :name, placeholder: 'Please enter name', class: 'row m-3', require: true %>
-    <%= form.text_field :prepration_time, placeholder: 'Please enter theprepration time', class: 'row m-3', require: true %>
-    <%= form.text_field :cooking_time, placeholder: 'Please enter the cooking time', class: 'row m-3', require: true %>
-    <%= form.text_area :description, placeholder: 'Please enter the description', class: 'row m-3', require: true %>
-    <%= form.submit "Submit" %>
+    <div class="foods-new-div">
+    <%= form.label :Name, class:"form-label" %><br>
+    <%= form.text_field :name, class: 'form-control', require: true %>
+    </div>
+
+    <div class="foods-new-div">
+    <%= form.label :Prepration_Time, class:"form-label" %><br>
+    <%= form.text_field :prepration_time, class: 'form-control', require: true %>
+    </div>
+
+    <div class="foods-new-div">
+    <%= form.label :Cooking_Time, class:"form-label" %><br>
+    <%= form.text_field :cooking_time, class: 'form-control', require: true %>
+    </div>
+    
+    <div class="foods-new-div">
+    <%= form.label :Description, class:"form-label" %><br>
+    <%= form.text_area :description, class: 'form-control', require: true %>
+    </div>
+
+    <%= form.submit "Submit", class: "foods-new-btn" %>
   <% end %>
 </div>
