@@ -125,3 +125,56 @@
   border-radius: 5px;
   color: #fff;
 }
+
+/* recipes-page styles */
+
+.recipes-c {
+  margin-top: 70px;
+}
+
+.recipes-h3 {
+  text-align: center;
+  color: #2276f4;
+}
+
+.recipe-new-btn {
+  background-color: #2276f4;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  margin-right: 40px;
+}
+
+.recipe-new-btn-t {
+  color: #fff;
+  text-decoration: none;
+}
+
+.recipes-col {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  /* align-items: center; */
+}
+
+.each-recipe-c {
+  margin: 0 200px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.recipe-dlt-btn {
+  background-color: #2276f4;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  color: #fff;
+}
+
+.each-recipe-link {
+  text-decoration: none;
+}
+
+/* public-recipes styles  */
+
+

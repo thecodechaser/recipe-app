@@ -10,6 +10,10 @@ class RecipesController < ApplicationController
   end
 
   def new
+    if !current_user
+      redirect_to recipes_path, flash: { alert: 'Please sign up or login!' }
+    end
+    
     @recipe = Recipe.new
   end
 
