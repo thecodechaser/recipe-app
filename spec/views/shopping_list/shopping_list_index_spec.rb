@@ -5,7 +5,7 @@ require 'rails_helper'
 RSpec.describe 'ShoppingList#index', type: :feature do
   describe 'Shopping List' do
     before(:each) do
-      @user = User.create(name: 'Ranjeet',  email: 'amy@gmail.com', password: 'password')
+      @user = User.create(name: 'Ranjeet', email: 'amy@gmail.com', password: 'password')
       visit new_user_session_path
       fill_in 'Email', with: 'amy@gmail.com'
       fill_in 'Password', with: 'password'
@@ -30,6 +30,5 @@ RSpec.describe 'ShoppingList#index', type: :feature do
     it 'Shopping list has price' do
       expect(page).to have_content('Price')
     end
-    
   end
 end

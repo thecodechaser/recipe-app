@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe Food, type: :model do
@@ -12,15 +14,15 @@ RSpec.describe Food, type: :model do
     end
 
     it 'check if the name is not exceeding 50 characters' do
-        subject.name = 'Hello world Hello world Hello world Hello world Hello world Hello world Hello world Hello world
+      subject.name = 'Hello world Hello world Hello world Hello world Hello world Hello world Hello world Hello world
         Hello world Hello world Hello world Hello world Hello world Hello world Hello world Hello world'
-        expect(subject).to_not be_valid
+      expect(subject).to_not be_valid
     end
 
     it 'check the measurement unit is not blank' do
-        subject.measurement_unit = nil
-        expect(subject).to_not be_valid
-      end
+      subject.measurement_unit = nil
+      expect(subject).to_not be_valid
+    end
 
     it 'check if the measurement unit is not exceeding 20 characters' do
       subject.measurement_unit = 'Hello world Hello world Hello world Hello world Hello world Hello world'

@@ -38,7 +38,7 @@ RSpec.feature 'Logins', type: :feature do
         fill_in 'Password', with: @user.password
       end
       click_button 'Log in'
-      expect(page).to have_current_path("/")
+      expect(page).to have_current_path('/')
     end
   end
   # rubocop:enable Metrics/BlockLength
