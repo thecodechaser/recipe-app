@@ -1,0 +1,32 @@
+<div class="foods-c">  
+<h3 class="foods-h3">All Foods</h1>
+  <div class="d-flex justify-content-end m-3">
+    <button class='food-new-btn'>
+      <%= link_to 'Add new food', new_food_path, class: "food-new-btn-t" %>
+    </button> 
+  </div>
+  <table class="table m-3">
+    <thead>
+        <tr>
+        <th scope="col">Food</th>
+        <th scope="col">Measurement Unit</th>
+        <th scope="col">Unit Price</th>
+        <th scope="col">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+      <% @foods.each do |food| %>
+        <tr>
+        <th scope="row"> <%= food.name %> </th>
+        <td> <%= food.measurement_unit %> </td>
+        <td>$<%= food.price %> </td>
+        <td> 
+          <% if can? :destroy, food %> 
+            <%= button_to "Delete", food_path(food.id ), :method => :delete, class: "food-dlt-btn" %> 
+          <% end %>
+        </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

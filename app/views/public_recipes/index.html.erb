@@ -1,0 +1,15 @@
+<h2 class="public-recipe-h2"> Public Recipes </h2>
+<% @public_recipes.each_with_index do |public_recipe, index| %>
+  <%= link_to recipe_path(public_recipe[:id]), class: "each-public-recipe" do %> 
+    <div class="row border public-recipe-2c">
+      <div class="col-3">
+        <h3> <%= public_recipe[:name] %> </h3>
+        <p class="public-recipe-user"> By: <%= public_recipe[:user] %> </p>
+      </div>
+      <div class="col-offset-1 col-8 public-recipe-2c2">
+        <h6 class="public-recipe-items"> Total food items: <%= public_recipe[:food_items] %></h6>
+        <h6 class="public-recipe-price"> Total price: $<%= @total_price[index] %></h6>
+      </div>
+    </div>
+  <% end %>
+<% end %>

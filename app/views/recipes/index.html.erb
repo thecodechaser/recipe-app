@@ -1,0 +1,30 @@
+<div class="recips-c">
+  <h3 class="recipes-h3">All Recipes</h3>
+  <div class="d-flex justify-content-end m-3">
+    <button class='food-new-btn'>
+      <%= link_to 'Add new recipe', new_recipe_path, class: "recipe-new-btn-t" %>
+    </button> 
+  </div>
+
+  
+  <div class="recipes-col">
+    <% @recipes.each do |recipe| %>
+      <%= link_to recipe_path(recipe.id), class: "each-recipe-link" do %>
+      <div class="each-recipe-c">
+      <div class="">
+        <h3><%= recipe.name %></h3>
+        
+        <% if can? :destroy, recipe %>
+        <%= button_to "Remove", recipe_path(recipe.id ), :method => :delete, class: "recipe-dlt-btn" %> 
+        <% end %>
+
+      </div>
+      <div class="recipes-desc">
+        <p><%= recipe.description %></p>
+      </div>
+      </div>
+      <% end %>
+  <% end %>
+  </div>
+
+</div>

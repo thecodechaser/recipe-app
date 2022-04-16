@@ -1,0 +1,22 @@
+<div class="recipe-food-edit">
+  <h3 class='m-3 recipe-food-new-h3'> Add food to Recipe</h3>
+  <%= form_with url: recipe_recipe_food_path, method: :patch, scope: :edit_recipe_food do |form| %>
+    <div class="form-div" > -
+    <div class="mb-3 col-sm-4">
+    <%= form.label :food, class:"form-label" %><br>
+    <%= form.select :food_id, current_user.foods.collect {|food| [food.name, food.id]},{ include_blank: true} , required: true, class:"form-select" %><br>
+
+    </div>
+
+    <div class="mb-3 col-sm-4">
+    <%= form.label :quantity, class:"form-label" %><br>
+    <%= form.number_field :quantity ,  class:"form-control" , required: true, placeholder: '1',  min: 1%><br>
+    </div>
+
+    <div class="recipe-food-edit-btns">
+    <%= form.submit "Update", class:"btn btn-primary form-control2" %>
+    <%=link_to 'Back', recipe_path(@recipe_id), class:"btn btn-primary form-control2"%>
+    </div>
+    </div>
+<%end%>
+</div>

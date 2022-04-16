@@ -1,0 +1,60 @@
+
+<div class="recipe-show-c">
+  <h2 class="recipe-show-h2"><%= @recipe.name %></h2>
+ 
+  <div class="d-flex recipe-show-d1">
+    <p class="flex-grow-1 recipe-show-prep-t">Prepration time: <%= @recipe.prepration_time %></p>
+    <p class="recipe-show-publcT">Public</p>
+
+    <% if current_user.id == @recipe.user.id %> 
+    <%= button_to recipe_path(@recipe.id), :method => :patch, class: "align-self-end public-btn" do %>
+      <% if @recipe.public %>
+        <i class="fa fa-toggle-on" style="font-size:48px;color:green"></i>
+      <% else %>
+        <i class="fa fa-toggle-off" style="font-size:48px;color:green"></i>
+      <% end %>
+    <% end %>
+    <% end %>
+  </div>
+
+     <p class="show-cook-time">Cooking time: <%= @recipe.cooking_time %></p>
+     <p class="show-steps">Steps goes here...</p>
+
+   <div class="d-flex justify-content-between">
+   <% if current_user.id == @recipe.user.id %> 
+   <button class='shopping-list-btn'>
+   <%= link_to 'Generate shooping list', shopping_list_index_path, class: "shopping-list-btn-t" %>
+ </button> 
+   <button class='add-ingre-btn'>
+   <%= link_to 'Add incredient', new_recipe_recipe_food_path(@recipe.id), class: "add-ingre-btn-t" %>
+ </button> 
+ <% end %>
+   </div>
+
+   <table class="table m-5">
+    <thead>
+      <tr>
+        <th scope="col">Food</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Value</th>
+        <th scope="col">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+    <% @recipe.recipe_foods.each do |recipe_food| %>
+      <tr>
+        <th scope="row"><%= recipe_food.food.name %> </th>
+        <td><%= recipe_food.quantity %><%= recipe_food.food.measurement_unit %> </td>
+        <td>  $<%= recipe_food.food.price*recipe_food.quantity %></td>
+        <td class="show-btns"> 
+        <% if can? :destroy, @recipe %>
+        <%= link_to "Modify", edit_recipe_recipe_food_path(@recipe.id, recipe_food.id), class: "show-modify-btn" %> 
+          <%= button_to "Remove", recipe_recipe_food_path(@recipe.id, recipe_food.id), :method => :delete, class: "show-dlt-btn" %> 
+          <% end %>
+        </td>
+      </tr>
+      <%end %>
+   </tbody>
+  </table>
+
+</div>
