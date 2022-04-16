@@ -293,6 +293,7 @@ DEPENDENCIES
   puma (~> 5.0)
   rails (~> 7.0.2, >= 7.0.2.3)
   rails-controller-testing
+  rspec-core (~> 3.4, >= 3.4.4)
   rspec-rails (~> 5.0.0)
   rswag
   selenium-webdriver
