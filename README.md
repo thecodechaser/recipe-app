@@ -34,6 +34,10 @@
 - Markup (HTML)
 - Styles (CSS, Bootstrap)
 
+## Live version
+
+- Visit [Recipe-App](https://recipe-app-thecodechaser.herokuapp.com/)
+
 ## Getting Started
 
 To get a local copy up and running follow these simple example steps.
