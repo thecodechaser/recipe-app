@@ -15,6 +15,7 @@ module Api
             format.json { render json: 'Wrong email or password'.to_json, status: :ok }
           end
         end
+        
       end
 
       def register
