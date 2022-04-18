@@ -14,4 +14,13 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root "home_page#index"
 
+  # api routes
+
+  namespace :api , defaults: { format: :json } do
+    namespace :v1 do
+      post 'users/sign_up' => 'users#register'
+      post 'users/sign_in' => 'users#login'
+    end
+  end
+
 end
